@@ -1,10 +1,6 @@
 # divideRec
 ### use
-<<<<<<< HEAD
 ### 1. npm i divideRec
-=======
-### npm i divideRec
->>>>>>> ea0558c15b658fde5c25a8b2aa1f8bca44928d06
 
 ```
 var divideRec = require("divideRec");
