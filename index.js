@@ -59,6 +59,27 @@ var getScaleRectangle = function(arr,distance){
     testArr.push(p1,p2,p3,p4);
     return testArr;
 }
+var getRestoreRectangle = function(arr,distance){
+    let testArr = [];
+    let p1 = {
+        x:arr[0].x - distance,
+        y:arr[0].y - distance
+    };
+    let p2 = {
+        x:arr[1].x - distance,
+        y:arr[1].y + distance
+    };
+    let p3 = {
+        x:arr[2].x + distance,
+        y:arr[2].y - distance
+    };
+    let p4 = {
+        x:arr[3].x + distance,
+        y:arr[3].y + distance
+    };
+    testArr.push(p1,p2,p4,p3);
+    return testArr;
+}
 var getRoate = function (p1, p2) {
     let offsetX = (p2.x - p1.x);
     let offsetY = (p2.y - p1.y);
@@ -204,19 +225,20 @@ var rotateThisRec = function(floor){
         });
     });
     let testRec = [];
+    let scaleArr = [];
     sibianxing.map((item)=>{
         testRec.push(getScaleRectangle(item,5))
     });
     // console.log(sibianxing);
     let areaArr = [];
-    let arrTest = arr.map((item,index)=>{
+    let arrTest = floor.map((item,index)=>{
         areaArr.push([item.x,item.y]);
-    })
+    });
     testRec.map((item,index)=>{
         // return (classifyPoint(arr,[item.x,item.y]) !=1);
         let boolean = true;
         item.map((item1,index1)=>{
-           if(classifyPoint(arr,[item1.x,item1.y]) == 1){
+           if(classifyPoint(areaArr,[item1.x,item1.y]) == 1){
                 boolean = false;
            }
         });
@@ -224,6 +246,11 @@ var rotateThisRec = function(floor){
             scaleArr.push(item);
         }
     });
+    let zongRec = [];
+    scaleArr.map((item)=>{
+        zongRec.push(getRestoreRectangle(item,5));
+    })
+    return zongRec;
 }
-rotateThisRec(onn);
+module.exports = rotateThisRec;
 
