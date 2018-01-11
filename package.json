@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MrHanzwii/partitionRectangle/issues"
   },
-  "homepage": "https://github.com/MrHanzwii/partitionRectangle#readme"
+  "homepage": "https://github.com/MrHanzwii/partitionRectangle#readme",
+  "dependencies": {
+    "robust-point-in-polygon": "^1.0.3"
+  }
 }
