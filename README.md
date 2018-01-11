@@ -1,9 +1,9 @@
 # divideRec
 ### use
-### 1. npm i divideRec
+### 1. npm i divide-rec
 
 ```
-var divideRec = require("divideRec");
+var divideRec = require("divide-rec");
 var testArr = [
     {
         x:0,
