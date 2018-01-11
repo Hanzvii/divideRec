@@ -1,7 +1,10 @@
 {
-  "name": "partitionrectangle",
+  "name": "divide-rec",
   "version": "1.0.0",
   "description": "",
+  "keywords": [
+    "divide","rectangle","quadrangle","polygon","resolution","segmentation"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
